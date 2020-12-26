@@ -46,7 +46,7 @@ Each route checks if the user is authenticated. It means if the user provide cor
 
 ### Sessions
 
-The webpage uses sessions to confirm that user is logged in. Once the user logins, his credentials are checked in if exist in the database and a session is created (and stored in the cookies.
+The webpage uses sessions to confirm that user is logged in. Once the user logged in, his/her credentials are checked in if exist in the database and a session is created (and stored in the cookies.
 
 ### Database
 
@@ -61,9 +61,9 @@ Database is created to store users details, products, orders and checkout inform
 
 ## How to launch application
 
-1. Check that you have Node version 8+
-2. Clone the code: `git clone https://github.com/RokasDie/cs50-final-project.git`
-3. Run command prompt in the folder and run `npm install` to install all dependencies
-4. Once installed run command `npm start`
-5. In your browser go to `localhost:3000`
+1. Make sure that Python 3 is installed.
+2. Clone the code: `git clone https://github.com/Abdelhameed88/cs50-online-shop.git`
+3. Run command prompt in the folder and run `python -m pip install flask` to install flask
+4. Once installed run command `python flask run`
+5. In your browser go to `http://localhost:5000/home`
 6. You are ready to go!
