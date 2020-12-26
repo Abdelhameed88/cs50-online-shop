@@ -1,52 +1,63 @@
-# cs50-online-shop
-cs50-online-shop
-# CS50 Final Project - Homework framework
+# CS50 Final Project - cs50-online-shop
 
-The project is a webpage where teachers can create assignments for students. The implementation is fairly simple, to keep the project scope in check. I wanted to make a project like this to expand my knowledge of Node JS and of techniques like buffer piping from database to client, role based authentications, etc.
+The project is a webpage for online shopping for home decoration and accessories. I wanted to make a project like this to expand my knowledge in web development.
 
 Technologies used:
 
-- Node JS
-- Express JS
-- bcryptjs
-- passport
-- sqlite3
-- ejs
-- other small libraries or packages
+- HTML
+- CSS
+- Javascript
+- flask
+- python
+- sqlites3
+
+Tools used:
+- visual studio 
+- MSQL
 
 ## How the webpage works?
 
-The idea is simple. The user can register either as student or teacher. During registration you need to enter these fields:
+This is eshopping website. Customer need to register if first time visit for the website or login using username / password to access the homepage. 
+In Homepage, custmomers have the choice to select their disered category and then viewing the products.
+While viewing the product, they can either go for prduct details ot checkout direclty.
 
+During registration the user needs to enter these fields
+- First name
+- Last name
 - Email
-- Name
-- Password: it is checked to match, must be at least 6 symbols long and is hashed after checks are done
-- Checkbox for what type of user you will be (student or teacher)
+- Username
+- Password
+THe customer can't move foraward without filling out all the fields.
 
-Student registration allows you to access student dashboard, where you can see created homework. Entering the homework you can upload a file. Once the teacher grades and reviews your submission it will appear instead of <input type="file">.
-
-For teachers, teacher dashboard is unlocked, where they can create a homework and see student's which submitted homework. When accessing the homework, teacher can download the submitted file and then write a review and grade it.
+During checkout the user needs to enter these fields
+- First name
+- Last name
+- Email
+- Telephone
+- Country
+- City
+- Address
+- Postal code
+THe customer can't move foraward without filling out all the fields and after successful checkout order confirmation page will be displayed to the user with the order ID to enable the user to track his/her order
 
 ### Routing
 
-Each route checks if the user is authenticated. It means if correct mail and password were supplied and what role it has. So for example a teacher cannot enter /students/homeworks/1 route. The same is for student, he cannot enter teacher dashboard route.
+Each route checks if the user is authenticated. It means if the user provide correct username and password so he/she will be able to access any page from the website rather than this the user will have to register to the website.
 
 ### Sessions
 
-The webpage uses sessions to confirm that user is registered. Once the user logins, his credentials are checked with bcrypt and Passport JS library. Once everything passes a session is created (serialized and deserialized) and stored in the cookies. The server attaches user to subsequent requests, so the back-end can easily access the details, like roles: student, teacher.
+The webpage uses sessions to confirm that user is logged in. Once the user logins, his credentials are checked in if exist in the database and a session is created (and stored in the cookies.
 
 ### Database
 
-Database stores all users, homework, student submissions. The tables, like student submissions uses foreign keys to relate users to submitted homework. Moreover, homework table uses foreign keys to relate the homework to a teacher.
+Database is created to store users details, products, orders and checkout information. 
 
 ## Possible improvements
-
-As all applications this one can also be improved. Possible improvements:
-
-- Have administrator account which confirms user identity, so that student could not register as a teacher
-- Ability to change account details
-- Have a way for teacher to upload videos to explain the assignment
-- Notificaitons to email about new homeworks or submissions
+- Add shopping cart and support multi-purchases
+- Have administrator account which will be used to add products details and track orders.
+- Ability to change the user account details
+- Sending Email confirmation upon placinhg a new order
+- Support VISA/Mastercard payment.
 
 ## How to launch application
 
